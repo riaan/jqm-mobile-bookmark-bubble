@@ -23,6 +23,9 @@
   1.1.2 : - Android 4.0 Tablet / Mobile both support.
   1.1.3 : - Fork by wiifm
           - iOS7 support.
+  1.1.4 : - Fork by riaanlos
+		  - Dutch translation
+		  - Using classes and external stylesheet for css customization
 
   ##########################
 
