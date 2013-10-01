@@ -1,0 +1,61 @@
+.bubble {
+	position: absolute;
+	z-index: 100000;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+}
+	.bubble .bubble-inner {
+		position: relative;
+		width: 214px;
+
+		border: 2px solid #fff;
+		padding: 1em 1.5em 1em 0.5em;
+
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+
+		box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.7);
+		-moz-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.7);
+		-webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.7);
+
+		background-color: #eee;
+
+		font-family: sans-serif;
+		font-size: 0.75em;
+	}
+	.bubble .bubble-inner-android { font-size: 0.625em; }
+
+	.bubble .bubble-icon {
+		float: left;
+		width: 55px;
+		height: 55px;
+		margin: -2px 7px 3px 5px;
+		background-color: #fff;
+
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+		-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+	}
+
+	.bubble .bubble-close {
+		position: absolute;
+		display: block;
+		top: -5px;
+		right: -5px;
+		width: 16px;
+		height: 16px;
+		border: 10px solid transparent;
+	}
+
+	.bubble .bubble-arrow {
+		width: 25px;
+		height: 19px;
+		position: absolute;
+		left: 111px;
+	}

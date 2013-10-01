@@ -648,38 +648,23 @@ google.bookmarkbubble.Bubble.prototype.build_ = function() {
   var isPlayBook = this.isPlayBook_();
   var isBlackBerry = this.isBlackBerry_();
 
-
-  bubble.style.position = 'absolute';
-  bubble.style.zIndex = 100000;
-  bubble.style.width = '100%';
-  bubble.style.left = '0';
-  bubble.style.top = '0';
+  bubble.className = "bubble";
 
   var bubbleInner = document.createElement('div');
-  bubbleInner.style.position = 'relative';
-  bubbleInner.style.width = '214px';
+  bubbleInner.className = "bubble-inner";
+
   if (this.getAndroidVersion_() >= this.getVersion_(3, 0)) {
     bubbleInner.style.margin = '0 0 0 ' +(window.innerWidth - 240) + 'px';
   } else {
     bubbleInner.style.margin = isIpad ? '0 0 0 82px' : '0 auto';
   }
-  bubbleInner.style.border = '2px solid #fff';
-  bubbleInner.style.padding = '1em 1.5em 1em 0.5em';
-  bubbleInner.style.WebkitBorderRadius = '8px';
-  bubbleInner.style.WebkitBoxShadow = '0 0 8px rgba(0, 0, 0, 0.7)';
-  bubbleInner.style.WebkitBackgroundSize = '100% 8px';
-  bubbleInner.style.backgroundColor = '#eee';
-  bubbleInner.style.background = '#cddcf3 -webkit-gradient(linear, ' +
-      'left bottom, left top, ' + isIpad || isPlayBook || this.getAndroidVersion_() >= this.getVersion_(3, 0) ?
-          'from(#cddcf3), to(#b3caed)) no-repeat top' :
-          'from(#b3caed), to(#cddcf3)) no-repeat bottom';
-  bubbleInner.style.font = '0.75em sans-serif';
+
   bubble.appendChild(bubbleInner);
 
   // The "Add to Home Screen" text is intended to be the exact same text
   // that is displayed in the menu of Android / Mobile Safari.
   if (isAndroid) {
-    bubbleInner.style.font = '0.625em sans-serif';
+    bubbleInner.className = "bubble-inner bubble-inner-android";
     if (this.getAndroidVersion_() < this.getVersion_(3, 0)) {
       bubbleInner.innerHTML = this.msg.android;
     }
@@ -718,23 +703,16 @@ google.bookmarkbubble.Bubble.prototype.build_ = function() {
   }
 
   var icon = document.createElement('div');
-  icon.style['float'] = 'left';
-  icon.style.width = '55px';
-  icon.style.height = '55px';
-  icon.style.margin = '-2px 7px 3px 5px';
+  icon.className = "bubble-icon";
+
   icon.style.background =
-      '#fff url(' + this.getIconUrl_() + ') no-repeat 0 0';
+      'url(' + this.getIconUrl_() + ') no-repeat 0 0';
   icon.style.WebkitBackgroundSize = 'contain';
-  icon.style.WebkitBorderRadius = '10px';
-  icon.style.WebkitBoxShadow = '0 2px 5px rgba(0, 0, 0, 0.4)';
   bubbleInner.insertBefore(icon, bubbleInner.firstChild);
 
   var arrow = document.createElement('div');
   arrow.style.backgroundImage = 'url(' + this.IMAGE_ARROW_DATA_URL_ + ')';
-  arrow.style.width = '25px';
-  arrow.style.height = '19px';
-  arrow.style.position = 'absolute';
-  arrow.style.left = '111px';
+  arrow.className = "bubble-arrow";
   if (isIpad || isPlayBook) {
     arrow.style.WebkitTransform = 'rotate(180deg)';
     arrow.style.top = '-19px';
@@ -751,13 +729,7 @@ google.bookmarkbubble.Bubble.prototype.build_ = function() {
 
   var close = document.createElement('a');
   close.onclick = google.bind(this.closeClickHandler_, this);
-  close.style.position = 'absolute';
-  close.style.display = 'block';
-  close.style.top = '-5px';
-  close.style.right = '-5px';
-  close.style.width = '16px';
-  close.style.height = '16px';
-  close.style.border = '10px solid transparent';
+  close.className = "bubble-close";
   close.style.background =
       'url(' + this.IMAGE_CLOSE_DATA_URL_ + ') no-repeat';
   close.style.WebkitBackgroundSize = "contain";
